@@ -1,0 +1,14 @@
+UPDATE versao SET versao_bd=32; 
+UPDATE versao SET versao_codigo='5.4'; 
+
+ALTER TABLE usuarios ADD COLUMN usuario_pauta int(100) unsigned NOT NULL DEFAULT'0';
+
+
+INSERT INTO cias (cia_nome, cia_nome_completo, cia_superior, cia_tel1, cia_tel2, cia_fax, cia_endereco1, cia_endereco2, cia_cidade, cia_estado, cia_cep, cia_pais, cia_url, cia_responsavel, cia_descricao, cia_tipo, cia_email, cia_customizado, cia_contatos, cia_acesso, cia_cabacalho, cia_nup, cia_qnt_nup) VALUES 
+	('Pq R Mnt/ 5','Parque Regional de Manutenção da 5ª Região Militar',386,'','','','','','','','','','',0,NULL,0,NULL,NULL,NULL,0,'<p style=\"text-align: center;\"><strong>MINISTÉRIO DA DEFESA<br />EXÉRCITO BRASILEIRO<br />COMANDO MILITAR DO SUL<br />5ª REGIÃO MILITAR E 5ª DIVISÃO DE EXÉRCITO<br />PARQUE REGIONAL DE MANUTENÇÃO DA 5ª REGIÃO MILITAR</strong></p>',NULL,0),
+	('H Ge C','Hospital Geral de Curitiba',386,'','','','','','','','','','',0,NULL,0,NULL,NULL,NULL,0,'<p style=\"text-align: center;\"><strong>MINISTÉRIO DA DEFESA<br />EXÉRCITO BRASILEIRO<br />COMANDO MILITAR DO SUL<br />5ª REGIÃO MILITAR E 5ª DIVISÃO DE EXÉRCITO<br />HOSPITAL GERAL DE CURITIBA</strong></p>',NULL,0),
+	('H Gu Fl','Hospital de Guarnição de Florianópolis',386,'','','','','','','','','','',0,NULL,0,NULL,NULL,NULL,0,'<p style=\"text-align: center;\"><strong>MINISTÉRIO DA DEFESA<br />EXÉRCITO BRASILEIRO<br />COMANDO MILITAR DO SUL<br />5ª REGIÃO MILITAR E 5ª DIVISÃO DE EXÉRCITO<br />HOSPITAL DE GUARNIÇÃO DE FLORIANÓPOLIS</strong></p>',NULL,0),
+	('15ª CSM','15ª Circunscrição de Serviço Militar - Curitiba',386,'','','','','','','','','','',0,NULL,0,NULL,NULL,NULL,0,'<p style=\"text-align: center;\"><strong>MINISTÉRIO DA DEFESA<br />EXÉRCITO BRASILEIRO<br />COMANDO MILITAR DO SUL<br />5ª REGIÃO MILITAR E 5ª DIVISÃO DE EXÉRCITO<br />15ª CIRCUNSCRIÇÃO DE SERVIÇO MILITAR </strong></p>',NULL,0),
+	('16ª CSM','16ª Circunscrição de Serviço Militar - Florianópolis',386,'','','','','','','','','','',0,NULL,0,NULL,NULL,NULL,0,'<p style=\"text-align: center;\"><strong>MINISTÉRIO DA DEFESA<br />EXÉRCITO BRASILEIRO<br />COMANDO MILITAR DO SUL<br />5ª REGIÃO MILITAR E 5ª DIVISÃO DE EXÉRCITO<br />16ª CIRCUNSCRIÇÃO DE SERVIÇO MILITAR </strong></p>',NULL,0),
+	('C I M H','Campo de Instrução Marechal Hermes - Três Barras',386,'','','','','','','','','','',0,NULL,0,NULL,NULL,NULL,0,'<p style=\"text-align: center;\"><strong>MINISTÉRIO DA DEFESA<br />EXÉRCITO BRASILEIRO<br />COMANDO MILITAR DO SUL<br />5ª REGIÃO MILITAR E 5ª DIVISÃO DE EXÉRCITO<br />CAMPO DE INSTRUÇÃO MARECHAL HERMES</strong></p>',NULL,0),
+	('C R O/5','Comissão Regional de Obras/5',386,'','','','','','','','','','',0,NULL,0,NULL,NULL,NULL,0,'<p style=\"text-align: center;\"><strong>MINISTÉRIO DA DEFESA<br />EXÉRCITO BRASILEIRO<br />COMANDO MILITAR DO SUL<br />5ª REGIÃO MILITAR E 5ª DIVISÃO DE EXÉRCITO<br />COMISSÃO REGIONAL DE OBRAS/5</strong></p>',NULL,0);

@@ -1,0 +1,35 @@
+/* Copyright [2008] -  Sérgio Fernandes Reinert de Lima
+Este arquivo é parte do programa GP-Web
+O GP-Web é um software livre; você pode redistribuí-lo e/ou modificá-lo dentro dos termos da Licença Pública Geral GNU como publicada pela Fundação do Software Livre (FSF); na versão 2 da Licença.
+Este programa é distribuído na esperança que possa ser  útil, mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer  MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU/GPL em português para maiores detalhes.
+Você deve ter recebido uma cópia da Licença Pública Geral GNU, sob o título "licença GPL 2.odt", junto com este programa, se não, acesse o Portal do Software Público Brasileiro no endereço www.softwarepublico.gov.br ou escreva para a Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301, USA 
+*/
+
+html { height:0; }
+body { height:0; min-height:0; margin:0; }
+h2{ display: none; }
+h3 { border-bottom:2px solid #777777; } 
+#parafazer_listas { display: none; }
+.small-bar { display:none; }
+.task-actions { display:none; }
+
+#bar { display:none; }
+#taskviewcontainer { border:none; }
+#taskviewcontainer img { display:none; }
+
+#tasklist { list-style-type: decimal; list-style-position: outside;  }
+#tasklist li { padding-left:0px; margin-left:30px; border-bottom:none; padding-bottom: 8px; } 
+div.task-nota-block { border-left:1px solid #777777; background:none; padding-left:5px; margin-top:5px; padding-top:0px; font-size:9pt; color:#333333; } 
+.task-middle { margin-left:0px; margin-right:3px; }
+.task-left { display:none; }
+
+.task-date { white-space:nowrap; margin-left:10px; }
+#tasklist li.hoje, #tasklist li.passado { background-color:#ffffff; border-color:#dedede; }
+.task-prio { font-weight:bold; }
+
+#footer_content { border-top:1px solid #777777; background:none; }
+#footer_content a { text-decoration:none; color:#000000; }
+
+#sort { display:none; }
+#tagcloudbtn { display:none; }
+.mtt-notas-mostrar_esconder { display:none; }

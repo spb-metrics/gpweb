@@ -1,0 +1,33 @@
+UPDATE versao SET versao_codigo='8.0.0'; 
+UPDATE versao SET ultima_atualizacao_bd='2011-09-29'; 
+UPDATE versao SET ultima_atualizacao_codigo='2011-09-29'; 
+UPDATE versao SET versao_bd=71;
+
+SET FOREIGN_KEY_CHECKS=0;
+
+ALTER TABLE usuarios CHANGE usuario_contato usuario_contato INTEGER(100) UNSIGNED DEFAULT NULL;
+ALTER TABLE usuarios CHANGE usuario_login usuario_login VARCHAR(20) DEFAULT '';
+ALTER TABLE usuarios CHANGE usuario_senha usuario_senha VARCHAR(32) DEFAULT '';
+ALTER TABLE usuarios CHANGE usuario_superior usuario_superior INTEGER(100) UNSIGNED DEFAULT NULL;
+ALTER TABLE usuarios CHANGE usuario_acesso_email usuario_acesso_email TINYINT(3) DEFAULT '0';
+ALTER TABLE usuarios CHANGE usuario_pode_oculta usuario_pode_oculta INTEGER(1) DEFAULT '1';
+ALTER TABLE usuarios CHANGE usuario_cm usuario_cm INTEGER(100) UNSIGNED DEFAULT NULL;
+ALTER TABLE usuarios CHANGE usuario_especial usuario_especial INTEGER(1) DEFAULT '0';
+ALTER TABLE usuarios CHANGE usuario_ativo usuario_ativo INTEGER(1) DEFAULT '1';
+ALTER TABLE usuarios CHANGE usuario_admin usuario_admin TINYINT(1) DEFAULT '0';
+ALTER TABLE usuarios CHANGE usuario_pode_assinar usuario_pode_assinar INTEGER(1) DEFAULT '1';
+ALTER TABLE usuarios CHANGE usuario_pode_protocolar usuario_pode_protocolar INTEGER(1) DEFAULT '0';
+ALTER TABLE usuarios CHANGE usuario_pode_criar usuario_pode_criar INTEGER(1) DEFAULT '1';
+ALTER TABLE usuarios CHANGE usuario_pode_aprovar usuario_pode_aprovar INTEGER(1) DEFAULT '1';
+ALTER TABLE usuarios CHANGE usuario_pode_criar_parte usuario_pode_criar_parte INTEGER(1) DEFAULT '1';
+ALTER TABLE usuarios CHANGE usuario_pode_editar usuario_pode_editar INTEGER(1) DEFAULT '1';
+ALTER TABLE usuarios CHANGE usuario_pode_outra_cia usuario_pode_outra_cia TINYINT(1) DEFAULT '0';
+ALTER TABLE usuarios CHANGE usuario_pode_superior usuario_pode_superior TINYINT(1) DEFAULT '0';
+ALTER TABLE usuarios CHANGE usuario_envia_cia usuario_envia_cia TINYINT(1) DEFAULT '0';
+ALTER TABLE usuarios CHANGE usuario_recebe_cia usuario_recebe_cia TINYINT(1) DEFAULT '0';
+ALTER TABLE usuarios CHANGE usuario_inserir_demanda usuario_inserir_demanda TINYINT(1) DEFAULT '0';
+ALTER TABLE usuarios CHANGE usuario_analisa_demanda usuario_analisa_demanda TINYINT(1) DEFAULT '0';
+ALTER TABLE usuarios CHANGE usuario_analisa_viabilidade usuario_analisa_viabilidade TINYINT(1) DEFAULT '0';
+ALTER TABLE usuarios CHANGE usuario_cria_termo_abertura usuario_cria_termo_abertura TINYINT(1) DEFAULT '0';
+ALTER TABLE usuarios CHANGE usuario_aprovar_termo_abertura usuario_aprovar_termo_abertura TINYINT(1) DEFAULT '0';
+ALTER TABLE usuarios CHANGE usuario_pauta usuario_pauta INTEGER(100) UNSIGNED DEFAULT NULL;

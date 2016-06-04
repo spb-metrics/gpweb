@@ -1,0 +1,159 @@
+<?php
+/*
+Copyright [2008] -  Sérgio Fernandes Reinert de Lima
+Este arquivo é parte do programa gpweb
+O gpweb é um software livre; você pode redistribuí-lo e/ou modificá-lo dentro dos termos da Licença Pública Geral GNU como publicada pela Fundação do Software Livre (FSF); na versão 2 da Licença.
+Este programa é distribuído na esperança que possa ser  útil, mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer  MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU/GPL em português para maiores detalhes.
+Você deve ter recebido uma cópia da Licença Pública Geral GNU, sob o título "licença GPL 2.odt", junto com este programa, se não, acesse o Portal do Software Público Brasileiro no endereço www.softwarepublico.gov.br ou escreva para a Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301, USA 
+*/
+
+
+include_once $Aplic->getClasseBiblioteca('xajax/xajax_core/xajax.inc');
+$xajax = new xajax();
+$xajax->configure('defaultMode', 'synchronous');
+//$xajax->setFlag('debug',true);
+//$xajax->setFlag('outputEntities',true);	
+
+if ($Aplic->profissional) include_once BASE_DIR.'/modulos/projetos/viabilidade_editar_ajax_pro.php';
+
+function exibir_cias($cias){
+	global $config;
+	$cias_selecionadas=explode(',', $cias);
+	$saida_cias='';
+	if (count($cias_selecionadas)) {
+			$saida_cias.= '<table cellpadding=0 cellspacing=0>';
+			$saida_cias.= '<tr><td class="texto" style="width:400px;">'.link_cia($cias_selecionadas[0]);
+			$qnt_lista_cias=count($cias_selecionadas);
+			if ($qnt_lista_cias > 1) {		
+					$lista='';
+					for ($i = 1, $i_cmp = $qnt_lista_cias; $i < $i_cmp; $i++) $lista.=link_cia($cias_selecionadas[$i]).'<br>';		
+					$saida_cias.= dica('Outr'.$config['genero_organizacao'].'s '.ucfirst($config['organizacoes']), 'Clique para visualizar '.$config['genero_organizacao'].'s demais '.strtolower($config['organizacoes']).'.').' <a href="javascript: void(0);" onclick="expandir_colapsar(\'lista_cias\');">(+'.($qnt_lista_cias - 1).')</a>'.dicaF(). '<span style="display: none" id="lista_cias"><br>'.$lista.'</span>';
+					}
+			$saida_cias.= '</td></tr></table>';
+			} 
+	else 	$saida_cias.= '<table cellpadding=0 cellspacing=0 class="texto" width=100%><tr><td>&nbsp;</td></tr></table>';	
+	$objResposta = new xajaxResponse();
+	$objResposta->assign('combo_cias',"innerHTML", utf8_encode($saida_cias));
+	return $objResposta;				
+	}
+$xajax->registerFunction("exibir_cias");	
+
+function exibir_patrocinadores($patrocinadores){
+	global $config;
+	$patrocinadores_selecionados=explode(',', $patrocinadores);
+	$saida_patrocinadores='';
+	if (count($patrocinadores_selecionados)) {
+			$saida_patrocinadores.= '<table cellpadding=0 cellspacing=0>';
+			$saida_patrocinadores.= '<tr><td class="texto" style="width:400px;">'.link_contato($patrocinadores_selecionados[0],'','','esquerda');
+			$qnt_lista_patrocinadores=count($patrocinadores_selecionados);
+			if ($qnt_lista_patrocinadores > 1) {		
+					$lista='';
+					for ($i = 1, $i_cmp = $qnt_lista_patrocinadores; $i < $i_cmp; $i++) $lista.=link_contato($patrocinadores_selecionados[$i],'','','esquerda').'<br>';		
+					$saida_patrocinadores.= dica('Outros Patrocinadores', 'Clique para visualizar os demais patrocinadores.').' <a href="javascript: void(0);" onclick="expandir_colapsar(\'lista_patrocinadores\');">(+'.($qnt_lista_patrocinadores - 1).')</a>'.dicaF(). '<span style="display: none" id="lista_patrocinadores"><br>'.$lista.'</span>';
+					}
+			$saida_patrocinadores.= '</td></tr></table>';
+			} 
+	else $saida_patrocinadores.= '<table cellpadding=0 cellspacing=0 class="texto" width=100%><tr><td>&nbsp;</td></tr></table>';	
+	$objResposta = new xajaxResponse();
+	$objResposta->assign('combo_patrocinadores',"innerHTML", utf8_encode($saida_patrocinadores));
+	return $objResposta;				
+	}
+$xajax->registerFunction("exibir_patrocinadores");
+
+function exibir_contatos($contatos){
+	global $config;
+	$contatos_selecionados=explode(',', $contatos);
+	$saida_contatos='';
+	if (count($contatos_selecionados)) {
+			$saida_contatos.= '<table cellpadding=0 cellspacing=0>';
+			$saida_contatos.= '<tr><td class="texto" style="width:400px;">'.link_contato($contatos_selecionados[0],'','','esquerda');
+			$qnt_lista_contatos=count($contatos_selecionados);
+			if ($qnt_lista_contatos > 1) {		
+					$lista='';
+					for ($i = 1, $i_cmp = $qnt_lista_contatos; $i < $i_cmp; $i++) $lista.=link_contato($contatos_selecionados[$i],'','','esquerda').'<br>';		
+					$saida_contatos.= dica('Outr'.$config['genero_contato'].'s '.ucfirst($config['contatos']), 'Clique para visualizar '.$config['genero_contato'].'s demais '.strtolower($config['contatos']).'.').' <a href="javascript: void(0);" onclick="expandir_colapsar(\'lista_contatos\');">(+'.($qnt_lista_contatos - 1).')</a>'.dicaF(). '<span style="display: none" id="lista_contatos"><br>'.$lista.'</span>';
+					}
+			$saida_contatos.= '</td></tr></table>';
+			} 
+	else $saida_contatos.= '<table cellpadding=0 cellspacing=0 class="texto" width=100%><tr><td>&nbsp;</td></tr></table>';	
+	$objResposta = new xajaxResponse();
+	$objResposta->assign('combo_contatos',"innerHTML", utf8_encode($saida_contatos));
+	return $objResposta;				
+	}
+$xajax->registerFunction("exibir_contatos");
+
+function exibir_usuarios($usuarios){
+	global $config;
+	$usuarios_selecionados=explode(',', $usuarios);
+	$saida_usuarios='';
+	if (count($usuarios_selecionados)) {
+			$saida_usuarios.= '<table cellpadding=0 cellspacing=0>';
+			$saida_usuarios.= '<tr><td class="texto" style="width:400px;">'.link_usuario($usuarios_selecionados[0],'','','esquerda');
+			$qnt_lista_usuarios=count($usuarios_selecionados);
+			if ($qnt_lista_usuarios > 1) {		
+					$lista='';
+					for ($i = 1, $i_cmp = $qnt_lista_usuarios; $i < $i_cmp; $i++) $lista.=link_usuario($usuarios_selecionados[$i],'','','esquerda').'<br>';		
+					$saida_usuarios.= dica('Outr'.$config['genero_usuario'].'s '.ucfirst($config['usuarios']), 'Clique para visualizar '.$config['genero_usuario'].'s demais '.strtolower($config['usuarios']).'.').' <a href="javascript: void(0);" onclick="expandir_colapsar(\'lista_usuarios\');">(+'.($qnt_lista_usuarios - 1).')</a>'.dicaF(). '<span style="display: none" id="lista_usuarios"><br>'.$lista.'</span>';
+					}
+			$saida_usuarios.= '</td></tr></table>';
+			} 
+	else $saida_usuarios.= '<table cellpadding=0 cellspacing=0 class="texto" width=100%><tr><td>&nbsp;</td></tr></table>';	
+	$objResposta = new xajaxResponse();
+	$objResposta->assign('combo_usuarios',"innerHTML", utf8_encode($saida_usuarios));
+	return $objResposta;				
+	}
+$xajax->registerFunction("exibir_usuarios");
+
+function exibir_depts($depts){
+	global $config;
+	$depts_selecionados=explode(',', $depts);
+	$saida_depts='';
+	if (count($depts_selecionados)) {
+			$saida_depts.= '<table cellpadding=0 cellspacing=0>';
+			$saida_depts.= '<tr><td class="texto" style="width:400px;">'.link_secao($depts_selecionados[0]);
+			$qnt_lista_depts=count($depts_selecionados);
+			if ($qnt_lista_depts > 1) {		
+					$lista='';
+					for ($i = 1, $i_cmp = $qnt_lista_depts; $i < $i_cmp; $i++) $lista.=link_secao($depts_selecionados[$i]).'<br>';		
+					$saida_depts.= dica('Outr'.$config['genero_dept'].'s '.ucfirst($config['departamentos']), 'Clique para visualizar '.$config['genero_dept'].'s demais '.strtolower($config['departamentos']).'.').' <a href="javascript: void(0);" onclick="expandir_colapsar(\'lista_depts\');">(+'.($qnt_lista_depts - 1).')</a>'.dicaF(). '<span style="display: none" id="lista_depts"><br>'.$lista.'</span>';
+					}
+			$saida_depts.= '</td></tr></table>';
+			} 
+	
+	$objResposta = new xajaxResponse();
+	$objResposta->assign('combo_depts',"innerHTML", utf8_encode($saida_depts));
+	return $objResposta;				
+	}
+$xajax->registerFunction("exibir_depts");
+
+function selecionar_om_ajax($cia_id=1, $campo, $posicao, $script,  $vazio='', $acesso=0, $externo=0 ){
+	$saida=selecionar_om_para_ajax($cia_id, $campo, $script,  $vazio, $acesso, $externo);
+	$objResposta = new xajaxResponse();
+	$objResposta->assign($posicao,"innerHTML", $saida);
+	return $objResposta;
+	}
+
+$xajax->registerFunction("selecionar_om_ajax");	
+
+function mudar_ajax($superior='', $sisvalor_titulo='', $campo='', $posicao, $script){
+	$sql = new BDConsulta;	
+	$sql->adTabela('sisvalores');
+	$sql->adCampo('sisvalor_valor_id, sisvalor_valor');
+	$sql->adOnde('sisvalor_titulo="'.$sisvalor_titulo.'"');
+	$sql->adOnde('sisvalor_chave_id_pai="'.$superior.'"');
+	$sql->adOnde('sisvalor_projeto IS NULL');
+	$sql->adOrdem('sisvalor_valor');
+	$lista=$sql->Lista();
+	$sql->limpar();
+	$vetor=array(0 => '&nbsp;');	
+	foreach($lista as $linha) $vetor[utf8_encode($linha['sisvalor_valor_id'])]=utf8_encode($linha['sisvalor_valor']);	
+	$saida=selecionaVetor($vetor, $campo, $script);
+	$objResposta = new xajaxResponse(); 
+	$objResposta->assign($posicao,"innerHTML", $saida); 
+	return $objResposta; 
+	}	
+$xajax->registerFunction("mudar_ajax");
+
+$xajax->processRequest();
+
+?>

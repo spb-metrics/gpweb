@@ -1,0 +1,79 @@
+UPDATE versao SET versao_bd=40; 
+UPDATE versao SET versao_codigo='7.1'; 
+
+UPDATE pratica_modelo SET pratica_modelo_nome='FNQ 2010 1000 pontos' WHERE pratica_modelo_id=1; 
+
+INSERT INTO pratica_modelo (pratica_modelo_id, pratica_modelo_nome, pratica_modelo_pontos, pratica_modelo_obs) VALUES 
+	(8,'FNQ 2011 1000 pontos',1000,'Os Critérios de Excelência da FNQ incorporam a seus requisitos as técnicas mais inovadoras e bem-sucedidas de administração de organizações. O Modelo de Excelência da Gestão® (MEG) da FNQ 2010 foi aperfeiçoado principalmente para fortalecer os temas gestão do conhecimento, inovação e desenvolvimento de parcerias.');
+
+
+INSERT INTO pratica_criterio (pratica_criterio_id, pratica_criterio_modelo, pratica_criterio_numero, pratica_criterio_nome, pratica_criterio_pontos, pratica_criterio_obs, pratica_criterio_resultado) VALUES 
+ 	(57,8,1,'Liderança',110,'Este Critério aborda os processos gerenciais relativos à orientação filosófica da organização e controle externo sobre sua direção; ao engajamento, pelas lideranças, das pessoas e partes interessadas na sua causa; e ao controle de resultados pela direção.',0),
+  (58,8,2,'Estratégias e planos',60,'Este Critério aborda os processos gerenciais relativos à concepção e à execução das estratégias, inclusive aqueles referentes ao estabelecimento de metas e à defi nição e ao acompanhamento de planos necessários para o êxito das estratégias.',0),
+  (59,8,3,'Clientes',60,'Este Critério aborda os processos gerenciais relativos ao tratamento de informações de clientes e mercado e à comunicação com o mercado e clientes atuais e potenciais.',0),
+  (60,8,4,'Sociedade',60,'Este Critério aborda os processos gerenciais relativos ao respeito e tratamento das demandas da sociedade e do meio ambiente e ao desenvolvimento social das comunidades mais infl uenciadas pela organização.',0),
+  (61,8,5,'Informação e conhecimento',60,'Este Critério aborda os processos gerenciais relativos ao tratamento organizado da demanda por informações na organização e ao desenvolvimento controlado dos ativos intangíveis geradores de diferenciais competitivos, especialmente os de conhecimento.',0),
+  (62,8,6,'Pessoas',90,'Este Critério aborda os processos gerenciais relativos à confi guração de equipes de alto desempenho, ao desenvolvimento de competências das pessoas e à manutenção do seu bem-estar.',0),
+  (63,8,7,'Processos',110,'Este Critério aborda os processos gerenciais relativos aos processos principais do negócio e aos de apoio, tratando separadamente os relativos a fornecedores e os econômico-financeiros.',0),
+  (64,8,8,'Resultados',450,'Este Critério aborda os resultados da organização na forma de séries históricas e acompanhados de referenciais comparativos pertinentes, para avaliar o nível alcançado, e de níveis de desempenho associados aos principais requisitos de partes interessadas, para verificar o atendimento.',1);
+
+
+INSERT INTO pratica_item (pratica_item_id, pratica_item_criterio, pratica_item_numero, pratica_item_nome, pratica_item_pontos, pratica_item_obs, pratica_item_oculto) VALUES 
+	(145,57,1,'Governança corporativa',40,'Este Item aborda a implementação de processos gerenciais que contribuem diretamente para o estabelecimento do nível de compromisso da organização com a excelência e a sustentabilidade e para a transparência e o aumento do nível de confiança das partes interessadas.',0),
+  (146,57,2,'Exercício da liderança e promoção da cultura da excelência',40,'Este Item aborda a implementação de processos gerenciais que contribuem diretamente para o engajamento da força de trabalho e demais partes interessadas no êxito das estratégias e na promoção da cultura da excelência.',0),
+  (147,57,3,'Análise do desempenho da organização',30,'Este Item aborda a implementação de processos gerenciais que contribuem diretamente para avaliar o desempenho operacional e estratégico da organização em relação a metas e a informações comparativas do setor ou do mercado.',0),
+  (148,58,1,'Formulação das estratégias',30,'Este Item aborda a implementação de processos gerenciais que contribuem diretamente para a geração de estratégias consistentes e coerentes e de um modelo de negócio competitivo.',0),
+  (149,58,2,'Implementação das estratégias',30,'Este Item aborda a implementação de processos gerenciais que contribuem diretamente para assegurar o desdobramento, a realização e a atualização das estratégias da organização.',0),
+  (150,59,1,'Imagem e conhecimento de mercado',30,'Este Item aborda a implementação de processos gerenciais que contribuem diretamente para entender as necessidades e expectativas dos clientes-alvo, para tornar produtos e marcas conhecidas e a imagem favorável para conquistar clientes e mercados.',0),
+  (151,59,2,'Relacionamento com clientes',30,'Este Item aborda a implementação de processos gerenciais que contribuem diretamente para a satisfação dos clientes e sua fidelização aos produtos e marcas.',0),
+  (152,60,1,'Responsabilidade socioambiental',30,'Este Item aborda a implementação de processos gerenciais que contribuem diretamente para a geração de produtos, processos e instalações seguros aos usuários, à população e ao meio ambiente, promovendo o desenvolvimento sustentável.',0),
+  (153,60,2,'Desenvolvimento social',30,'Este Item aborda a implementação de processos gerenciais que contribuem diretamente para estimular o desenvolvimento social e para promover uma imagem favorável da organização perante a sociedade, incluindo, eventualmente, comunidades vizinhas às instalações da organização.',0),
+  (154,61,1,'Informações da organização',30,'Este Item aborda a implementação de processos gerenciais que contribuem diretamente para a disponibilização sistemática de informações atualizadas, precisas e seguras para os usuários, com apoio da tecnologia da informação.',0),
+  (155,61,2,'Ativos intangíveis e conhecimento organizacional',30,'Este Item aborda a implementação de processos gerenciais que contribuem diretamente para o aumento do diferencial competitivo da organização por meio do desenvolvimento e da proteção dos ativos intangíveis e, particularmente, dos conhecimentos que sustentam o desenvolvimento das estratégias e operações.',0),
+  (156,62,1,'Sistemas de trabalho',30,'Este Item aborda a implementação de processos gerenciais que contribuem diretamente para o alto desempenho das pessoas e das equipes.',0),
+  (157,62,2,'Capacitação e desenvolvimento',30,'Este Item aborda a implementação de processos gerenciais que contribuem diretamente para a capacitação e o desenvolvimento dos membros da força de trabalho',0),
+  (158,62,3,'Qualidade de vida',30,'Este Item aborda a implementação de processos gerenciais que contribuem diretamente para a criação de um ambiente seguro e saudável e a obtenção do bem-estar, da satisfação e do comprometimento das pessoas.',0),
+  (159,63,1,'Processos principais do negócio e processos de apoio',50,'Este Item aborda a implementação de processos gerenciais relativos aos processos principais do negócio e aos de apoio, cujas atividades operacionais contribuem diretamente para assegurar a geração de produtos excelentes para os clientes, atendendo às necessidades e expectativas de todas as partes interessadas.',0),
+  (160,63,2,'Processos relativos a fornecedores',30,'Este Item aborda a implementação de processos gerenciais que contribuem diretamente para o desenvolvimento e a melhoria da cadeia de suprimentos e para o comprometimento dos fornecedores e parceiros com a excelência.',0),
+  (161,63,3,'Processos econômico-financeiros',30,'Este Item aborda a implementação de processos gerenciais que contribuem diretamente para a sustentabilidade econômico-financeira da organização.',0),
+  (162,64,1,'Resultados econômico-financeiros',100,'Este Item aborda os resultados econômico-financeiros da organização, incluindo os relativos à estrutura, à liquidez, à atividade e à rentabilidade.',0),
+  (163,64,2,'Resultados relativos a clientes e ao mercado',100,'Este Item aborda os resultados relativos aos clientes e aos mercados, incluindo os referentes à imagem da organização.',0),
+  (164,64,3,'Resultados relativos à sociedade',60,'Este Item aborda os resultados relativos à sociedade, incluindo os referentes à responsabilidade socioambiental e ao desenvolvimento social.',0),
+  (165,64,4,'Resultados relativos às pesoas',60,'Este Item aborda os resultados relativos às pessoas, incluindo os referentes aos sistemas de trabalho, à capacitação e desenvolvimento e à qualidade de vida e os referentes à liderança de pessoas e de promoção da cultura da excelência.',0),
+  (166,64,5,'Resultados relativos a processos',100,'Este Item aborda os resultados relativos ao produto e a processos principais do negócio e processos de apoio, bem como outros resultados de processos de gestão.',0),
+  (167,64,6,'Resultados relativos a fornecedores',30,'Este Item aborda os resultados relativos aos produtos recebidos dos fornecedores e à gestão de fornecedores.',0);
+
+
+
+INSERT INTO pratica_maturidade (pratica_maturidade_id, pratica_modelo_id, minimo, maximo, descricao) VALUES 
+ 	(29,8,0,150,'Estágios preliminares de desenvolvimento de enfoques, quase todos reativos, associados aos fundamentos da excelência, considerando os requisitos dos Critérios. A aplicação é local, muitas em início de uso, apresentando poucos padrões de trabalho associados aos enfoques desenvolvidos.  O aprendizado ocorre de forma isolada, podendo haver inovação esporádica. Não ocorre o refinamento e a integração. Ainda não existem resultados relevantes decorrentes de enfoques implementados. Requisitos importantes para partes interessadas não são atendidos ou monitorados.'),
+  (30,8,151,250,'Os enfoques encontram-se nos primeiros estágios de desenvolvimento para alguns itens, com práticas proativas, em consideração aos fundamentos da excelência, existindo lacunas significativas na aplicação da maioria deles. Algumas práticas apresentam integração. Começam a aparecer alguns resultados relevantes decorrentes da aplicação de enfoques implementados. Muitos dos requisitos importantes para partes interessadas já são atendidos.'),
+  (31,8,251,350,'Enfoques adequados aos requisitos de muitos itens com proatividade, estando disseminados em algumas áreas, processos, produtos e/ou partes interessadas. Existem incoerências entre as práticas de gestão e as estratégias, assim como existem muitas lacunas no inter-relacionamento entre as práticas de gestão. O aprendizado, o refinamento e a integração ocorrem para alguns itens.  Alguns resultados relevantes decorrentes da aplicação dos enfoques, avaliações e melhorias são apresentados com algumas tendências favoráveis. Muitos dos requisitos importantes para partes interessadas já são atendidos.'),
+  (32,8,351,450,'Enfoques adequados para os requisitos da maioria dos itens, sendo alguns proativos, disseminados na maioria das áreas, processos, produtos e/ou partes interessadas, com controle das práticas para muitos itens. Uso continuado para a maioria das práticas. O aprendizado e a integração ocorrem para muitos itens. As práticas de gestão são coerentes com a maioria das estratégias da organização, mas existem lacunas signifcativas no inter-relacionamento entre as práticas de gestão. Muitos resultados relevantes são apresentados como decorrência da aplicação dos enfoques. Alguns resultados apresentam tendências favoráveis. Início de uso de informações comparativas. A maioria dos requisitos importantes para partes interessadas é atendida.'),
+  (33,8,451,550,'Enfoques adequados para os requisitos de quase todos os itens, sendo vários deles proativos, disseminados pelas principais áreas, processos, produtos e/ou partes interessadas. Uso continuado em quase todas as práticas, com controles atuantes. Existem algumas inovações e muitos refinamentos decorrentes do aprendizado. As práticas de gestão são coerentes com as estratégias da organização, existem algumas lacunas no inter-relacionamento entre as práticas de gestão, e existem muitas lacunas de cooperação entre áreas e/ou com partes interessadas, afetando regularmente a integração. A maioria dos resultados apresenta tendência favorável. Nível atual é igual ou superior aos referenciais pertinentes para alguns resultados. A maioria dos requisitos importantes para partes interessadas é atendida.'),
+  (34,8,551,650,'Enfoques adequados para os requisitos de todos os itens, sendo alguns refinados e a maioria proativos, bem disseminados pelas principais áreas, processos, produtos e/ou partes interessadas. Uso continuado em quase todas as práticas. As práticas de gestão são coerentes com as estratégias da organização, o refinamento decorre do aprendizado e inovação para muitas práticas do Item. Existe inter-relacionamento entre as práticas de gestão, mas ainda existem algumas lacunas de cooperação entre áreas e/ou com partes interessadas, afetando em parte a integração. Quase todos os resultados apresentam tendência favorável. O nível atual é igual ou superior aos referenciais pertinentes para a maioria dos resultados, podendo ser considerado líder do ramo. Quase todos os requisitos importantes para partes interessadas são atendidos.'),
+  (35,8,651,750,'Enfoques adequados para os requisitos de todos os itens, sendo a maioria refinada a partir de aprendizado e inovação para muitos itens. Quase todos os requisitos são atendidos de forma proativa. Uso continuado em quase todas as práticas, disseminadas pelas principais áreas, processos, produtos e/ou partes interessadas.Existem algumas lacunas na cooperação entre áreas e/ou com partes interessadas, afetando eventualmente a integração. Quase todos os resultados apresentam tendência favorável e nenhum apresenta tendência desfavorável. Nível atual superior aos referenciais pertinentes para a maioria dos resultados, sendo considerado líder do ramo e referencial de excelência em algumas áreas, processos ou produtos. Quase todos os requisitos importantes para partes interessadas são atendidos.'),
+  (36,8,751,850,'Enfoques muito refinados, alguns inovadores proativos, com uso continuado e muito bem disseminados pelas áreas, processos, produtos e/ou partes interessadas. O aprendizado promove fortemente a inovação. As práticas entre itens e critérios são na maioria integradas. Tendências favoráveis em todos os resultados. Nível atual igual ou superior aos referenciais pertinentes para quase todos os resultados, sendo referencial de excelência em muitas áreas, processos ou produtos.  Os principais requisitos para partes interessadas são atendidos.'),
+  (37,8,851,1000,'Enfoques altamente proativos, refinados, inovadores, totalmente disseminados, com uso continuado, sustentados por um aprendizado permanente e plenamente integrados. Tendências favoráveis em todos os resultados. Nível atual igual ou superior aos referenciais pertinentes para quase todos os indicadores. Liderança no setor reconhecida como ?referencial de excelência? na maioria das áreas, processos ou produtos. Os principais requisitos para partes interessadas são atendidos.');
+
+
+INSERT INTO pratica_mod_campo ( pratica_mod_campo_modelo, pratica_mod_campo_nome) VALUES 
+  (8,'pratica_adequada'),
+  (8,'pratica_proativa'),
+  (8,'pratica_continuada'),
+  (8,'pratica_abrage_pertinentes'),
+  (8,'pratica_refinada'),
+  (8,'pratica_melhoria_aprendizado'),
+  (8,'pratica_arte'),
+  (8,'pratica_inovacao'),
+  (8,'pratica_coerente'),
+  (8,'pratica_interrelacionada'),
+  (8,'pratica_cooperacao'),
+  (8,'pratica_cooperacao_partes'),
+  (8,'pratica_indicador_relevante'),
+  (8,'pratica_indicador_favoravel'),
+  (8,'pratica_indicador_superior'),
+  (8,'pratica_indicador_estrategico'),
+  (8,'pratica_indicador_lider'),
+  (8,'pratica_indicador_excelencia'),
+  (8,'pratica_indicador_atendimento');

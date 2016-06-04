@@ -1,0 +1,133 @@
+.gpw-icon{
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+    margin-left: 3px;
+    background: no-repeat center center;
+}
+
+.gpw-link {
+    cursor: pointer;
+}
+
+.iconeAdicionar{background-image: url('imagens/icones/adicionar.png')}
+.iconeAtualizar{background-image: url('imagens/icones/atualizar.png')}
+.iconeSalvar{background-image: url('imagens/icones/salvar.png')}
+.iconeSair{background-image: url('imagens/icones/sair.png')}
+.iconeDeletar{background-image: url('imagens/icones/remover.png')}
+.iconeEditar{background-image: url('imagens/icones/editar.png')}
+.iconeVer{background-image: url('imagens/icones/ver.png')}
+
+.iconeCia{background-image: url('imagens/icones/organizacao_p.gif')}
+
+/*habilita especificar ícone da cia para arvore expandida ou não*/
+.x-grid-cell-inner img.iconeCia{background-image: url('imagens/icones/organizacao_p.gif')}
+
+.gpw-empty-grid{
+    text-align: center;
+    font-weight: bold;
+    padding-top: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+/* formato tabela de tooltip */
+.gpw-tooltip-table {
+    border-collapse: separate;
+    background-color: #ededed;
+    border: none;
+    border-spacing: 4px;
+    font-size: 12px;
+}
+
+/*
+Label do valor do tooltip
+*/
+.gpw-tooltip-table .gpw-tooltip-label {
+    border: 1px solid darkgrey;
+    background: none;
+    color: #000000;
+    text-align: center;
+    margin-right: 2px;
+    white-space: nowrap;
+    font-weight: bold;
+    padding: 2px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+/*borda redonda dos compos do ext*/
+.x-form-field{
+    padding: 2px;
+    -moz-border-radius: 3px !important;
+    -webkit-border-radius: 3px !important;
+    -o-border-radius: 3px !important;
+    -ms-border-radius: 3px !important;
+    -khtml-border-radius: 3px !important;
+    border-radius: 3px !important;
+}
+
+/*cor de fundo dos campos do ext quando selecionados*/
+.x-field-form-focus.x-form-text{
+    background: #FFF59D none !important;
+}
+
+.gpw-ver-field{
+    background-color: #FFFDE7 !important;
+    padding: 3px;
+    border: #FBC02D 1px solid;
+    -moz-border-radius: 3px !important;
+    -webkit-border-radius: 3px !important;
+    -o-border-radius: 3px !important;
+    -ms-border-radius: 3px !important;
+    -khtml-border-radius: 3px !important;
+    border-radius: 3px !important;
+}
+
+.ext-ckeditor h1, .ext-ckeditor h2, .ext-ckeditor h3, .ext-ckeditor h4, .ext-ckeditor h5, .ext-ckeditor h6 {
+    font-weight: bold !important;
+}
+.ext-ckeditor h1 {
+    font-size: 2em !important;
+    padding: .67em 0 !important;
+}
+.ext-ckeditor h2 {
+    font-size: 1.5em !important;
+    padding: .83em 0 !important;
+}
+.ext-ckeditor h3 {
+    font-size: 1.17em !important;
+    padding: .83em 0 !important;
+}
+.ext-ckeditor h4 {
+    font-size: 1em !important;
+}
+.ext-ckeditor h5 {
+    font-size: .83em !important;
+}
+.ext-ckeditor p {
+    margin: 1em 0 !important;
+}
+
+.ext-ckeditor i, .ext-ckeditor cite, .ext-ckeditor em, .ext-ckeditor var, .ext-ckeditor address, .ext-ckeditor dfn {
+    font-style: italic !important;
+}
+
+.ext-ckeditor strong, .ext-ckeditor b {
+    font-weight: bold;
+}
+
+.ext-ckeditor .marker{
+    background-color: yellow !important;
+}
+
+.ext-ckeditor q::before {
+    content: open-quote;
+}
+
+.ext-ckeditor q::after {
+    content: close-quote;
+}
